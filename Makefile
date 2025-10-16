@@ -43,7 +43,7 @@ validate: check-region init
 
 .PHONY: ubuntu2404
 ubuntu2404: check-region init validate release-ubuntu2404.auto.pkrvars.hcl
-./packer build -only="amazon-ebs.ubuntu2404" -var "region=${REGION}" .
+	./packer build -only="amazon-ebs.ubuntu2404" -var "region=${REGION}" .
 
 .PHONY: ubuntu2404gpu
 ubuntu2404gpu: check-region init validate release-ubuntu2404.auto.pkrvars.hcl
