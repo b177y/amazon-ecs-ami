@@ -55,7 +55,7 @@ ExecStart=/home/ecs-rootless/bin/docker compose up -d --remove-orphans
 ExecStop=/home/ecs-rootless/bin/docker compose down
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 EOF"
 sudo su -l ecs-rootless -c "systemctl --user daemon-reload"
 sudo su -l ecs-rootless -c "systemctl --user enable --now ecs-agent"
